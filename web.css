@@ -1,0 +1,246 @@
+@font-face {
+  font-family: 'Swiss 721 Extended Bold';
+  src: url('Swiss 721 Extended Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  background-color: #000000;
+  color: #e0e0e0;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: fixed;
+  top: 40px; /* Increased from 0/20px to 40px to move navbar further down */
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  background: rgba(12, 12, 12, 0.95);
+  padding: 12px 36px; /* Increased padding by 20% */
+  border-radius: 36px; /* Increased border-radius by 20% */
+  z-index: 1000;
+  box-shadow: 0 0 24px rgb(0, 0, 0); /* Slightly upscaled shadow */
+  transition: top 0.5s;
+  font-size: 1.2rem;
+  animation: navbarSlideIn 1s cubic-bezier(0.77,0,0.175,1) forwards;
+}
+
+/* Slide-in animation for navbar */
+@keyframes navbarSlideIn {
+  from {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 36px; /* Increased gap by 20% */
+  padding: 0;
+  margin: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.44rem; /* Increased by 20% */
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #f0c000;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('https://i.postimg.cc/KvbTZNgH/front-view.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  opacity: 0;
+  animation: heroFadeIn 3s ease-in-out forwards;
+}
+
+/* Fade-in animation for the hero background image */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 2;
+  }
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(10,10,10,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.overlay h1.main-title {
+  font-family: 'Swiss 721 Extended Bold', Arial, Helvetica, sans-serif;
+  font-size: clamp(2.5rem, 10vw, 7rem);
+  background: none;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  margin-top: 12vh;
+  opacity: 0;
+  animation: fadeInUp 2s ease-in-out forwards, flicker 1s linear;
+  /* Extra faint, short neon glow effect */
+  text-shadow:
+    0 0 2px #fff,
+    0 0 4px #fff,
+    0 0 6px #f0c000,
+    0 0 8px #fff;
+  letter-spacing: 3px;
+  z-index: 2;
+  font-weight: bold;
+}
+
+/* Flicker animation for the text */
+@keyframes flicker {
+  0%, 10%, 18%, 22%, 30%, 38%, 44%, 52%, 60%, 68%, 76%, 84%, 92%, 100% {
+    opacity: 1;
+    filter: brightness(1.1);
+  }
+  5%, 15%, 20%, 25%, 35%, 40%, 50%, 55%, 65%, 70%, 80%, 85%, 95% {
+    opacity: 0.5;
+    filter: brightness(0.7);
+  }
+  12%, 28%, 48%, 58%, 78%, 88% {
+    opacity: 0.8;
+    filter: brightness(0.9);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.content {
+  padding: 100px 20px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1.2rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .overlay h1.main-title {
+    font-size: 8rem;
+  }
+  .content {
+    padding: 80px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 8px 20px;
+  }
+
+  .navbar ul {
+    gap: 15px;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+  }
+
+  .overlay h1.main-title {
+    font-size: 4rem;
+  }
+
+  .content h2 {
+    font-size: 2rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+  }
+
+  .search-bar {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay h1.main-title {
+    font-size: 3rem;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar {
+    top: 10px;
+    padding: 6px 15px;
+  }
+
+  .search-bar {
+    width: 80px;
+  }
+
+  .content {
+    padding: 60px 10px;
+  }
+}
+
+/* Additional Responsive adjustments */
+@media (max-width: 700px) {
+  .navbar {
+    padding: 8px 12px;
+    top: 10px;
+  }
+  .navbar ul {
+    gap: 16px;
+  }
+  .overlay h1.main-title {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    margin-top: 8vh;
+  }
+  .content {
+    padding: 60px 8px 30px 8px;
+  }
+}
