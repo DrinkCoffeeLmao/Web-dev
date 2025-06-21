@@ -6,12 +6,28 @@
 }
 
 
+/* Set the static background for the whole page */
 body {
   margin: 0;
   font-family: 'Orbitron', Arial, Helvetica, sans-serif;
-  background-color: #000000;
+  background:
+    linear-gradient(rgba(40,40,40,0.65), rgba(40,40,40,0.65)),
+    url('drift cool.jpg') center/cover no-repeat;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #e0e0e0;
   scroll-behavior: smooth;
+}
+
+/* Remove background and filter from all sections */
+.about-section,
+.content,
+#founder,
+#contact {
+  background: transparent !important;
+  filter: none !important;
 }
 
 .navbar {
@@ -261,21 +277,30 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* Layered backgrounds: drift image, then paper texture */
   background:
     linear-gradient(rgba(40,40,40,0.65), rgba(40,40,40,0.65)), /* grey overlay */
-    url('paper-texture.png') repeat,
+    url('cool\ tiles.webp')
     url('drift cool.jpg') center/cover no-repeat;
-  background-blend-mode: multiply, normal, normal;
-  filter: brightness(0.7) grayscale(0.3); /* match grey, lower brightness */
+  background-blend-mode: multiply, lighten, normal;
+  background-attachment: fixed;
+  background-size: cover, auto, cover;
+  background-repeat: no-repeat, repeat, no-repeat;
+  filter: brightness(0.8) grayscale(0.2);
   overflow: hidden;
   padding: 0 5vw;
   z-index: 1;
 }
 
+
 /* Remove or keep the dark overlay as needed */
 .about-section::before {
-  display: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('cool\ texture.jpg') repeat;
+  opacity: 0.5; /* Adjust transparency here */
+  z-index: 1;
+  pointer-events: none;
 }
 
 .about-overlay {
@@ -314,7 +339,7 @@ body {
   margin-bottom: 1.2rem;
   line-height: 1.5;
   font-weight: 400;
-  text-shadow: 0 2px 16px rgba(0,0,0,0.7);
+  text-shadow: 0 2px 16px rgba(0,0,0,0.85);
   max-width: 700px;
 }
 
@@ -343,3 +368,4 @@ html, body {
 }
 
 /* Removed scroll-snap-align */
+
