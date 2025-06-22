@@ -5,11 +5,24 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'HelveticaItalic';
+  src: url('helvetica-neue-5/HelveticaNeueMediumItalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaBlack';
+  src: url('helvetica-neue-5/HelveticaNeueBlack.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
 
 /* Set the static background for the whole page */
 body {
   margin: 0;
-  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  font-family: HelveticaItalic, sans-serif;
   background:
     linear-gradient(rgba(40,40,40,0.65), rgba(40,40,40,0.65)),
     url('drift cool.jpg') center center/cover no-repeat;
@@ -148,6 +161,7 @@ body {
   color: #fff;
   font-size: 1.44rem; /* Increased by 20% */
   transition: color 0.3s ease;
+  font-family: HelveticaBlack;
 }
 
 .navbar a:hover {
@@ -316,7 +330,7 @@ body {
   margin: 0.5rem 0 0.25rem 0;
   color: #eef9f2;
   font-size: 1.3rem;
-  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 
 .team-card p {
@@ -360,7 +374,7 @@ body {
   margin: 0.5rem 0 0.25rem 0;
   color: #eef9f2;
   font-size: 1.2rem;
-  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  font-family: HelveticaBlack;
 }
 
 .event-card p {
@@ -374,7 +388,7 @@ body {
   margin-top: 0.5rem;
   color: #eef9f2;
   font-size: 0.95rem;
-  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  font-family: HelveticaBlack;
   letter-spacing: 1px;
 }
 
@@ -415,7 +429,7 @@ body {
   margin: 0.5rem 0 0.25rem 0;
   color: #eef9f2;
   font-size: 1.3rem;
-  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  font-family: HelveticaBlack;
 }
 
 .team-card p {
@@ -560,7 +574,7 @@ body {
 
 .about-overlay h2 {
   font-size: 4rem;
-  font-family: 'Orbitron', sans-serif;
+  font-family: HelveticaBlack;
   font-weight: bold;
   color: #fff;
   margin-bottom: 1.5rem;
