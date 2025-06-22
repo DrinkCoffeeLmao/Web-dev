@@ -5,10 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Madras Driven</title>
   <link rel="stylesheet" href="web.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="lgo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.querySelector('.navbar-toggle');
+      const navList = document.querySelector('.navbar ul');
+      toggle.addEventListener('click', function() {
+        navList.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', navList.classList.contains('open'));
+      });
+    });
+  </script>
 </head>
 <body>
   <nav class="navbar">
+    <button class="navbar-toggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <ul>
       <li><a href="#hero">Home</a></li>
       <li><a href="#about">About Us</a></li>
@@ -21,6 +37,7 @@
   <section class="hero" id="hero">
     <div class="overlay">
       <h1 class="main-title">MADRAS DRIVEN</h1>
+      <h2 class="brief-description">Where Passion Meets Precision</h2>
     </div>
   </section>
 
@@ -49,20 +66,90 @@
     </div>
   </section>
 
-  <section class="content" id="events">
-    <h2>Upcoming Events</h2>
-    <p>Stay tuned for underground meets, drift shows, and exotic car events in Chennai.</p>
-  </section>
+<section class="content" id="events" style="min-height: 50vh">
+  <h2>Upcoming Events</h2>
+  <p>Stay tuned for underground meets, drift shows, and exotic car events in Chennai.</p>
+  <div class="scroll-row-container">
+    <div class="scroll-row event-cards">
+      <div class="event-card">
+        <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=400&q=80" alt="Cars and Cocoa" class="event-photo">
+        <h3>Cars and Cocoa</h3>
+        <p>Chill morning meet with supercars galore. Perfect for car talk and new friends.</p>
+        <span class="event-date">July 14, 2025</span>
+      </div>
+      <div class="event-card">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Southside Sunday" class="event-photo">
+        <h3>Southside Sunday</h3>
+        <p>Sunday cruise along the ECR, ending with a beachside breakfast. All rides welcome!</p>
+        <span class="event-date">July 27, 2025</span>
+      </div>
+      <div class="event-card">
+        <img src="https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=format&fit=crop&w=400&q=80" alt="AuraFlux" class="event-photo">
+        <h3>AuraFlux</h3>
+        <p>Nighttime neon afterparty with music, lights, and the city’s wildest builds. Show off your glow!</p>
+        <span class="event-date">August 9, 2025</span>
+      </div>
+      <div class="event-card">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=400&q=80" alt="Night Run" class="event-photo">
+        <h3>Night Run</h3>
+        <p>Midnight drive through Chennai’s empty streets. For the true night owls and speed lovers.</p>
+        <span class="event-date">August 23, 2025</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section class="content" id="founder">
-    <h2>Our Founder</h2>
-    <p>Founded by passionate car enthusiasts to bring together the supercar community of Chennai.</p>
-  </section>
+<section class="content" id="founder" style="min-height: 50vh">
+  <h2>Our Team</h2>
+  <p>Founded by passionate car enthusiasts to bring together the supercar community of Chennai.</p>
+  <div class="scroll-row-container">
+    <div class="scroll-row team-cards">
+      <div class="team-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Arjun Kumar" class="team-photo">
+        <h3>Arjun Kumar</h3>
+        <p>Founder & Lead Driver</p>
+        <p>Loves JDM classics and organizing midnight runs.</p>
+      </div>
+      <div class="team-card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Suresh" class="team-photo">
+        <h3>Priya Suresh</h3>
+        <p>Event Coordinator</p>
+        <p>Expert in logistics and making every meet unforgettable.</p>
+      </div>
+      <div class="team-card">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rahul Dev" class="team-photo">
+        <h3>Rahul Dev</h3>
+        <p>Technical Lead</p>
+        <p>Master tuner and the brains behind our builds.</p>
+      </div>
+      <div class="team-card">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sneha Iyer" class="team-photo">
+        <h3>Sneha Iyer</h3>
+        <p>Community Manager</p>
+        <p>Connects drivers and keeps the spirit alive.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section class="content" id="contact">
+  <section class="content" id="contact" style="min-height: 50vh">
     <h2>Contact Us</h2>
-    <p>Email: contact@madrasdriven.in</p>
-    <p>Instagram: @madrasdriven</p>
+    <p>Email: <a href="mailto:contact@madrasdriven.in">contact@madrasdriven.in</a></p>
+    <p>Instagram: <a href="https://instagram.com/madrasdriven" target="_blank">@madrasdriven</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/company/madrasdrivven" target="_blank">Madras Drivven</a></p>
   </section>
+
+  <script>
+    document.querySelectorAll('.scroll-btn-left').forEach(btn => {
+      btn.onclick = function() {
+        btn.nextElementSibling.scrollBy({ left: -260, behavior: 'smooth' });
+      };
+    });
+    document.querySelectorAll('.scroll-btn-right').forEach(btn => {
+      btn.onclick = function() {
+        btn.previousElementSibling.scrollBy({ left: 260, behavior: 'smooth' });
+      };
+    });
+  </script>
 </body>
 </html>
